@@ -1,0 +1,12 @@
+<mat-card [class.done] = "todo.done">
+    <mat-card-title>{{todo.description}}</mat-card-title>
+    <mat-card-content>        
+        <div *ngIf="todo.done">
+            <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <mat-slide-toggle [(ngModel)]="todo.done" (ngModelChange)="doUpdate()">Mark as done</mat-slide-toggle>
+        <button mat-button color="danger" (click)="doDelete()">Remove</button>
+    </mat-card-actions>
+</mat-card>
